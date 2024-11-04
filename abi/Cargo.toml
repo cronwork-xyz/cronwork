@@ -3,5 +3,9 @@ name = "sablier-abi"
 version = "0.1.0"
 edition = "2021"
 
+[features]
+default = ["no-entrypoint"]
+no-entrypoint = []
+
 [dependencies]
 anchor-lang = { git = "https://github.com/coral-xyz/anchor.git", rev = "fe4fcded34a68934a6017a85d43a307cdb86d803" }
