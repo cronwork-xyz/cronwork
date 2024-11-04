@@ -1,5 +1,5 @@
 [workspace]
-members = ["cli", "cron", "plugin", "programs/*", "sdk", "utils"]
+members = ["cli", "cron", "plugin", "programs/*", "sdk", "utils", "abi"]
 resolver = "2"
 
 [profile.release]
