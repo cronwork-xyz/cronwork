@@ -7,7 +7,13 @@ pub mod pda;
 
 #[program]
 mod adrena_abi {
-    // use super::*;
+    #![allow(dead_code)]
+
+    use super::*;
+
+    pub(crate) fn thread_delete_admin(_: Context<ThreadDeleteAdmin>) -> Result<()> {
+        Ok(())
+    }
 }
 
 #[account]
@@ -107,4 +113,16 @@ pub struct SerializableAccount {
     pub pubkey: Pubkey,
     pub is_signer: bool,
     pub is_writable: bool,
+}
+
+#[derive(Accounts)]
+pub(crate) struct ThreadDeleteAdmin<'info> {
+    /// CHECKS: only for CPI
+    pub config: UncheckedAccount<'info>,
+    /// CHECKS: only for CPI
+    pub admin: UncheckedAccount<'info>,
+    /// CHECKS: only for CPI
+    pub close_to: UncheckedAccount<'info>,
+    /// CHECKS: only for CPI
+    pub thread: UncheckedAccount<'info>,
 }

@@ -97,4 +97,8 @@ pub mod thread_program {
     pub fn thread_withdraw(ctx: Context<ThreadWithdraw>, amount: u64) -> Result<()> {
         thread_withdraw::handler(ctx, amount)
     }
+
+    pub fn thread_delete_admin(ctx: Context<ThreadDeleteAdmin>) -> Result<()> {
+        thread_delete_admin::handler(ctx)
+    }
 }
